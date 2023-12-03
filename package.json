@@ -3,10 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start": "ng serve -o",
+    "build:href": "ng build --base-href ./",
+    "install:devs": "npm i -D rimraf copyfiles",
+    "make:docs": "mkdir docs",
+    "delete:docs": "rimraf docs",
+    "copy:dist-3rd": "copyfiles dist/pipes-app/* ./docs -f",
+    "copy:dist-browser": "copyfiles dist/pipes-app/browser/* ./docs -f",
+    "copy:dist": "npm run copy:dist-3rd && npm run copy:dist-browser",
+    "build:all": "npm run delete:docs && npm run build:href && npm run make:docs && npm run copy:dist"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +26,9 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^6.0.1",
+    "primeng": "^17.0.0-rc.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
