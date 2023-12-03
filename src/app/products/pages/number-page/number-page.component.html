@@ -1,0 +1,35 @@
+<p-panel header="Pipes Númericos" class="p-2">
+  <p>Pipes incluidos en Angular usualmente en el CommonModule</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-6 lg:col-4">
+    <p-card header="number">
+      <ul>
+        <li>{{ num | number : "1.2-2" : "en-US" }}</li>
+        <li>{{ num | number : "1.2-4" : "en-US" }}</li>
+        <li>{{ num | number : "1.6-6" : "en-US" }}</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-4">
+    <p-card header="currency">
+      <ul>
+        <li>{{ num | currency : "HNL" }}</li>
+        <li>{{ num | currency : "" : "symbol-narrow" : "1.2-4" }}</li>
+        <li>{{ num | currency }}</li>
+      </ul>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-6 lg:col-4">
+    <p-card header="percent">
+      <ul>
+        <li>{{ percent | percent }}</li>
+        <li>{{ percent | percent : "1.2-4" : "en-US" }}</li>
+        <li>{{ percent | percent : "1.6-6" : "en-US" }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
